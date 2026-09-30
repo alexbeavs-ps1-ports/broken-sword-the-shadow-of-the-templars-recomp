@@ -1,0 +1,31 @@
+{
+  "cue_path": "disc/Broken Sword - The Shadow of the Templars (Europe).cue",
+  "cue_name": "Broken Sword - The Shadow of the Templars (Europe).cue",
+  "bin_name": "Broken Sword - The Shadow of the Templars (Europe).bin",
+  "track_count": 1,
+  "data_track_size": 547670256,
+  "data_track_md5": "70423202715d4a7b74e743df1720adf1",
+  "data_track_sha1": "46fb3c414baf0791143d35bed244149ab1080bfa",
+  "data_track_crc32": "c418b39b",
+  "boot_exe": "SCES_003.46",
+  "serial": "SCES-00346",
+  "serial_exe": "SCES_003.46",
+  "volume_id": "",
+  "display_name": "Broken Sword: The Shadow of the Templars",
+  "load_address": "0x80010000",
+  "entry_pc": "0x800331EC",
+  "text_size": "0x00057800",
+  "stack_base": "0x801FFFF0",
+  "require_cue": true,
+  "required_disc_fp": "85b57e20ffba9038811f390a5e8c65de3ee22d03b3bf667d2ed7eefbdaf18eba",
+  "boot_exe_sha256": "8c42f484fd8c482a83f37ab7b124618fe24f2783d2e862888940b5d6731b840c",
+  "seed_count": 651,
+  "warnings": [
+    "cue has only 1 TRACK \u2014 Track-01-only dumps fail multi-track netplay/catalog gates; prefer a full Redump cue."
+  ],
+  "notes": [
+    "entry_pc/load_address/text_size/stack_base taken from PS-X EXE header.",
+    "seeds are first-pass boot-EXE JAL targets (+ entry); expect to grow as overlays / runtime paths are discovered.",
+    "required_disc_fp is psxrecomp-toc-v1 (matches runtime DiscIdentity)."
+  ]
+}

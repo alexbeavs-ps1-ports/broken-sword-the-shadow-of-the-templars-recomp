@@ -1,0 +1,55 @@
+
+[game]
+name = "Broken Sword: The Shadow of the Templars"
+id = "SCES-00346"
+players = 1
+exe = "disc/SCES_003.46"
+disc = "disc/Broken Sword - The Shadow of the Templars (Europe).cue"
+load_address = "0x80010000"
+entry_pc = "0x800331EC"
+text_size = "0x00057800"
+stack_base = "0x801FFFF0"
+
+[prepare_disc]
+out_dir = "disc"
+bin_name = "Broken Sword - The Shadow of the Templars (Europe).bin"
+cue_name = "Broken Sword - The Shadow of the Templars (Europe).cue"
+boot_exe = "SCES_003.46"
+known_sizes = [547670256]
+known_md5 = [
+  "70423202715d4a7b74e743df1720adf1",
+]
+known_sha1 = [
+  "46fb3c414baf0791143d35bed244149ab1080bfa",
+]
+known_crc32 = [
+  "c418b39b",
+]
+
+[recompiler]
+bios_config = "psxrecomp/bios/SCPH5552.toml"
+seeds = "seeds/ghidra_funcs.txt"
+out_dir = "generated"
+strict = true
+
+[runtime]
+openbios = false
+bios_hle = false
+window_title = "Broken Sword: The Shadow of the Templars Recompiled"
+memcard_dir = "saves"
+overlay_cache = true
+
+[video]
+renderer = "opengl"
+aspect_ratio = "4:3"
+
+[controller]
+default_mode = "digital"
+
+[netplay]
+require_cue = true
+required_tracks = 1
+required_disc_fp = "85b57e20ffba9038811f390a5e8c65de3ee22d03b3bf667d2ed7eefbdaf18eba"
+
+[pgo]
+enabled = false

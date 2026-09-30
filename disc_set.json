@@ -1,0 +1,18 @@
+{
+  "disc_count": 1,
+  "verdict": "single",
+  "differing_program_fields": [],
+  "warnings": [],
+  "discs": [
+    {
+      "index": 1,
+      "cue_name": "Broken Sword - The Shadow of the Templars (Europe).cue",
+      "cue_path": "disc/Broken Sword - The Shadow of the Templars (Europe).cue",
+      "serial": "SCES-00346",
+      "boot_exe": "SCES_003.46",
+      "entry_pc": "0x800331EC",
+      "track_count": 1,
+      "required_disc_fp": "85b57e20ffba9038811f390a5e8c65de3ee22d03b3bf667d2ed7eefbdaf18eba"
+    }
+  ]
+}
