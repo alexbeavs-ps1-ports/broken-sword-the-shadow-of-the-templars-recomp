@@ -42,6 +42,7 @@ psxrecomp_add_game_runtime(psx-runtime
     WINDOW_TITLE "Broken Sword: The Shadow of the Templars"
     DEFAULT_GAME_CONFIG_PATH "game.toml"
     MAX_PLAYERS 1
+    APP_ICON "${CMAKE_CURRENT_SOURCE_DIR}/assets/psxrecomp.ico"
 
 
     GEN_MARKER "generated/SCES_003.46_dispatch.c"

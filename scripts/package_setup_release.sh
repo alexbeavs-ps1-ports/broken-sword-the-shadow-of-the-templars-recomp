@@ -42,6 +42,14 @@ fi
 if [[ -f "${ROOT}/game_options.toml" ]]; then
   EXTRA_PROJECT+=(--project-file game_options.toml)
 fi
+# Licence and attribution must ship with a public kit. Guarded so the wrapper
+# still runs locally while those files are being prepared; release_package_gate
+# and the public payload audit reject a kit that omits them.
+for _legal in LICENSE THIRD_PARTY_NOTICES.md; do
+  if [[ -f "${ROOT}/${_legal}" ]]; then
+    EXTRA_PROJECT+=(--project-file "${_legal}")
+  fi
+done
 # Game-owned C that CMakeLists.txt compiles into the runtime — mod activation
 # plugins live here (CODEGEN_SETUP_SOURCES "src/<game>_mods.c"). Leaving this
 # out ships a CMakeLists that references a file the zip does not contain, so
@@ -84,11 +92,13 @@ exec bash "${PACKAGER}" \
   --artifact "${ARTIFACT_TAG}" \
   --zip-prefix broken-sword-the-shadow-of-the-templars \
   --exe-name broken_sword_the_shadow_of_the_templars \
+  --omit-openbios \
   --display-name "Broken Sword: The Shadow of the Templars" \
   --recompiler-build "${RECOMPILER_BUILD}" \
   --version-env RELEASE_VERSION \
   --disc-hint "Broken Sword: The Shadow of the Templars owned disc" \
   --bios-hint "your own SCPH-5552 (Europe) BIOS dump (524288 bytes; SHA-256 1faaa18fa820a0225e488d9f086296b8e6c46df739666093987ff7d8fd352c09)" \
+  --runtime-dir mods \
   --project-file project-manifest.toml \
   --project-file disc_set.json \
   --project-dir identity \
